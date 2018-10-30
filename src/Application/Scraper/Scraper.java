@@ -55,15 +55,19 @@ public class Scraper {
 
         HtmlElement price = ((HtmlElement) productPage.getFirstByXPath("//div[@class='pricer large']/div[@class='pricecontainer']"));
         String itemPrice = price == null ? "no price" : price.asText();
+        itemPrice = removeHtmlTags(itemPrice);
         product.setProductPrice(itemPrice);
 
         HtmlElement name = ((HtmlElement) productPage.getFirstByXPath("//a/h1[@class='title']"));
         String itemName = name == null ? "no name" : name.asText();
+        itemName = removeHtmlTags(itemName);
         product.setProductName(itemName);
 
         HtmlElement description = ((HtmlElement) productPage.getFirstByXPath("//div[@id='proddesccontainer']"));
         String itemDescription = description == null ? "no description" : description.asText();
+        itemDescription = removeHtmlTags(itemDescription);
         product.setProductDescription(itemDescription);
+
         generateJsonObject(product);
     }
 
@@ -71,5 +75,9 @@ public class Scraper {
         Gson g = new Gson();
         String JsonProduct = g.toJson(product);
         System.out.println(JsonProduct);
+    }
+
+    public String removeHtmlTags(String str) {
+        return str.replaceAll("\\r\\n", "");
     }
 }

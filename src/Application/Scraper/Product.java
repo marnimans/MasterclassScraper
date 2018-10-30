@@ -1,6 +1,5 @@
 package Application.Scraper;
 
-import java.math.BigDecimal;
 
 public class Product {
     public String productName;
