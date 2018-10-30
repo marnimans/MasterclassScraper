@@ -1,0 +1,15 @@
+
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÊƒÙĞ8Ò«Ú¦ì,
+[
+squid:S1061"9Replace this use of System.out or System.err by a logger.(ŸŸÓ¤ûÿÿÿÿ8 »×¦ì,
+Qsquid:S19055".Remove this unnecessary cast to "HtmlElement".(Å”ëşÿÿÿÿ8ÖÈ£§ì,
+esquid:S00112-"FDefine and throw a dedicated exception instead of using a generic one.(‹ıú8şæÒ¦ì,
+[
+squid:S106%"9Replace this use of System.out or System.err by a logger.(÷¤Çÿÿÿÿÿ8õñË¦ì,
+[
+squid:S106"9Replace this use of System.out or System.err by a logger.(¼ŸÎÌùÿÿÿÿ8ŒşÀ¦ì,
+Jsquid:S1444	",Make this "public static client" field final(¬®™‰8ÑÑ¦ì,
+„squid:S14886"aImmediately return this expression instead of assigning it to the temporary variable "itemPrice".(¼¤§çÿÿÿÿÿ8ÖÈ£§ì,
+Fsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ŒşÀ¦ì,
+‡"squid:ClassVariableVisibilityCheck	"RMake client a static final constant or non-public and provide accessors if needed.(¬®™‰8ÆæĞ¦ì,
