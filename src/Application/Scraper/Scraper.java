@@ -1,10 +1,17 @@
 package Application.Scraper;
 
+import Application.Product.Product;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlElement;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import com.google.gson.Gson;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.HttpClientBuilder;
 
+import java.io.IOException;
 import java.util.List;
 
 public class Scraper {
@@ -73,11 +80,27 @@ public class Scraper {
 
     public void generateJsonObject(Product product) {
         Gson g = new Gson();
-        String JsonProduct = g.toJson(product);
-        System.out.println(JsonProduct);
+        postJson(g.toJson(product));
+
+    }
+
+    //Todo Check for duplicate products
+    public void postJson(String jsonProduct) {
+        StringEntity entity = new StringEntity(jsonProduct, ContentType.APPLICATION_JSON);
+
+        HttpClient httpClient = HttpClientBuilder.create().build();
+        HttpPost request = new HttpPost("http://localhost:8080/api/product");
+        request.setEntity(entity);
+        try {
+            httpClient.execute(request);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public String removeHtmlTags(String str) {
+
         return str.replaceAll("\\r\\n", "");
     }
 }

@@ -1,32 +1,32 @@
-package Application.Scraper;
+package Application.Product;
 
 
 public class Product {
-    public String productName;
-    public String productPrice;
-    public String productDescription;
+    public String name;
+    public String price;
+    public String description;
 
     public String getProductName() {
-        return productName;
+        return name;
     }
 
     public void setProductName(String productName) {
-        this.productName = productName;
+        this.name = productName;
     }
 
     public String getProductPrice() {
-        return productPrice;
+        return price;
     }
 
     public void setProductPrice(String productPrice) {
-        this.productPrice = productPrice;
+        this.price = productPrice;
     }
 
     public String getProductDescription() {
-        return productDescription;
+        return description;
     }
 
     public void setProductDescription(String productDescription) {
-        this.productDescription = productDescription;
+        this.description = productDescription;
     }
 }
